@@ -8,8 +8,8 @@
     "dev": "tsc && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "NovusTheory",
+  "license": "MIT",
   "dependencies": {
     "@nodegui/nodegui": "^0.12.1",
     "@types/node": "^13.1.4",
