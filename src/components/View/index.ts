@@ -23,6 +23,11 @@ export class View implements VNNode {
                 }
                 return;
             }
+
+            case "id": {
+                this.nativeView.setObjectName(value as string);
+                return;
+            }
         }
 
         throw new Error("Prop not supported");

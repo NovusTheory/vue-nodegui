@@ -13,6 +13,9 @@ export class Window implements VNNode {
         if (settings.title !== undefined) {
             this.nativeWindow.setWindowTitle(settings.title);
         }
+        if (settings.styleSheet !== undefined) {
+            this.nativeWindow.setStyleSheet(settings.styleSheet);
+        }
 
         this.nativeWindow.show();
     }
@@ -43,6 +46,7 @@ export class WindowSettings {
     public maxHeight: number | undefined;
     public windowIcon: QIcon | undefined;
     public title: string | undefined;
+    public styleSheet: string | undefined;
 
     constructor() {}
 }
