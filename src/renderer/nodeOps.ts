@@ -17,6 +17,30 @@ export const nodeOps = {
                 return new Text();
             }
 
+            case "h1": {
+                return new Text();
+            }
+
+            case "h2": {
+                return new Text();
+            }
+
+            case "h3": {
+                return new Text();
+            }
+            
+            case "h4": {
+                return new Text();
+            }
+
+            case "h5": {
+                return new Text();
+            }
+
+            case "h6": {
+                return new Text();
+            }
+
             case "textarea": {
                 return new TextArea();
             }
