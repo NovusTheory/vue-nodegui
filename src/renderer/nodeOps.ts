@@ -1,4 +1,4 @@
-import { VNNode, VNElement, Text, View, Image } from '../components';
+import { VNNode, VNElement, Text, View, Image, TextArea } from '../components';
 
 export const nodeOps = {
     insert: (child: VNNode, parent: VNNode, anchor?: VNNode) => {
@@ -15,6 +15,10 @@ export const nodeOps = {
         switch (tag) {
             case "p": {
                 return new Text();
+            }
+
+            case "textarea": {
+                return new TextArea();
             }
 
             case "div": {
