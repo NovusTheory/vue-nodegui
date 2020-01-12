@@ -49,6 +49,10 @@ export const nodeOps = {
                 return new View();
             }
 
+            case "span": {
+                return new View();
+            }
+
             case "img": {
                 return new Image();
             }
