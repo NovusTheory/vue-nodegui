@@ -44,7 +44,7 @@ export abstract class VNNode {
     }
 
     /**
-     * 
+     * Patches an event on the node.
      * @param key The event key to attach listener to.
      * @param callback The callback to apply to the event listener
      */
