@@ -2,38 +2,28 @@ import { VNWindow } from './VNWindow'
 import { VNNode } from '../VNNode'
 import { QIcon } from '@nodegui/nodegui';
 
-export class Window implements VNNode {
-    private nativeWindow: VNWindow = new VNWindow();
+export class Window extends VNNode {
+    nativeWidget: VNWindow = new VNWindow();
 
     constructor(settings: WindowSettings) {
-        this.nativeWindow.resize(settings.width, settings.height);
+        super();
+
+        this.nativeWidget.resize(settings.width, settings.height);
         if (settings.windowIcon !== undefined) {
-            this.nativeWindow.setWindowIcon(settings.windowIcon);
+            this.nativeWidget.setWindowIcon(settings.windowIcon);
         }
         if (settings.title !== undefined) {
-            this.nativeWindow.setWindowTitle(settings.title);
+            this.nativeWidget.setWindowTitle(settings.title);
         }
         if (settings.styleSheet !== undefined) {
-            this.nativeWindow.setStyleSheet(settings.styleSheet);
+            this.nativeWidget.setStyleSheet(settings.styleSheet);
         }
 
-        this.nativeWindow.show();
-    }
-
-    setProp(key: string, value: string): void {
-        throw new Error("Method not implemented.");
-    }
-
-    setText(text: string): void {
-        throw new Error("Method not implemented.");
+        this.nativeWidget.show();
     }
 
     appendChild(node: VNNode): void {
-        this.nativeWindow.setCentralWidget(node.getNative());
-    }
-
-    getNative() {
-        return this.nativeWindow;
+        this.nativeWidget.setCentralWidget(node.nativeWidget);
     }
 }
 

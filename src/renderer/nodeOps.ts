@@ -17,7 +17,7 @@ export const nodeOps = {
                 return new Text();
             }
 
-            case "view": {
+            case "div": {
                 return new View();
             }
 
