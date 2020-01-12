@@ -1,4 +1,4 @@
-import { QWidget, QLabel, QMainWindow } from "@nodegui/nodegui";
+import { QWidget, QLabel, QMainWindow, QPushButton } from "@nodegui/nodegui";
 
 export abstract class VNNode {
     /**
@@ -44,6 +44,26 @@ export abstract class VNNode {
     }
 
     /**
+     * 
+     * @param key The event key to attach listener to.
+     * @param callback The callback to apply to the event listener
+     */
+    patchEvent(key: string, nextValue: any, prevValue: any): void {
+        // TODO: Implement removal of event listeners
+        if (this.nativeWidget instanceof QPushButton) {
+            switch (key) {
+                case "click": {
+                    this.nativeWidget.addEventListener("clicked", nextValue);
+                    break;
+                }
+            }
+            return;
+        }
+
+        throw new Error(`'${key}' is not a supported event`);
+    }
+
+    /**
      * Sets the text of this node.
      * Throws an exception if this node doesn't support setting text.
      * @param text The text to set on this node.
@@ -51,6 +71,9 @@ export abstract class VNNode {
     setText(text: string): void {
         if (this.nativeWidget instanceof QLabel) {
             (this.nativeWidget as QLabel).setText(text);
+            return;
+        } else if (this.nativeWidget instanceof QPushButton) {
+            (this.nativeWidget as QPushButton).setText(text);
             return;
         }
 

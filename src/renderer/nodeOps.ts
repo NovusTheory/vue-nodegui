@@ -1,4 +1,4 @@
-import { VNNode, VNElement, Text, View, Image, TextArea } from '../components';
+import { VNNode, VNElement, Text, View, Image, TextArea, Button } from '../components';
 
 export const nodeOps = {
     insert: (child: VNNode, parent: VNNode, anchor?: VNNode) => {
@@ -55,6 +55,10 @@ export const nodeOps = {
 
             case "img": {
                 return new Image();
+            }
+
+            case "button": {
+                return new Button();
             }
         }
 
