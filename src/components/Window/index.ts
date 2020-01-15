@@ -18,6 +18,12 @@ export class Window extends VNNode {
         if (settings.styleSheet !== undefined) {
             this.nativeWidget.setStyleSheet(settings.styleSheet);
         }
+        if (settings.minWidth !== undefined && settings.minHeight !== undefined) {
+            this.nativeWidget.setMinimumSize(settings.minWidth, settings.minHeight);
+        }
+        if (settings.maxWidth !== undefined && settings.maxHeight !== undefined) {
+            this.nativeWidget.setMaximumSize(settings.maxWidth, settings.maxHeight);
+        }
 
         this.nativeWidget.show();
     }

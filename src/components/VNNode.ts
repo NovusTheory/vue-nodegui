@@ -88,8 +88,10 @@ export abstract class VNNode {
     appendChild(node: VNNode): void {
         if (this.nativeWidget instanceof QMainWindow) {
             (this.nativeWidget as QMainWindow).setCentralWidget(node.nativeWidget);
+            return;
         } else if (this.nativeWidget instanceof QWidget) {
             this.nativeWidget.layout?.addWidget(node.nativeWidget);
+            return;
         }
 
         throw new Error("Method not supported");
