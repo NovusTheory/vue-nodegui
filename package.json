@@ -20,6 +20,6 @@
   "dependencies": {
     "@nodegui/nodegui": "^0.13.1",
     "@types/node": "^13.1.4",
-    "@vue/runtime-core": "^3.0.0-alpha.1"
+    "@vue/runtime-core": "^3.0.0-alpha.4"
   }
 }
