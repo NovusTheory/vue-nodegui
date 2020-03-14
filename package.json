@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/NovusTheory/vue-nodegui#readme",
   "dependencies": {
-    "@nodegui/nodegui": "^0.13.1",
+    "@nodegui/nodegui": "^0.15.5",
     "@types/node": "^13.1.4",
     "@vue/runtime-core": "^3.0.0-alpha.4"
   }
