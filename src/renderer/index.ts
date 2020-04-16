@@ -9,7 +9,7 @@ const { render: baseRender, createApp: baseCreateApp } = createRenderer<VNNode, 
     ...nodeOps
 })
 
-export const render = baseRender as RootRenderFunction<VNNode, VNElement>;
+export const render = baseRender as RootRenderFunction<VNElement>;
 
 export const createApp: CreateAppFunction<VNElement> = (...args) => {
     const app = baseCreateApp(...args);
