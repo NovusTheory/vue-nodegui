@@ -1,5 +1,4 @@
 import { VNNode } from "./VNNode";
 
-export interface VNElement extends VNNode {
-    
-}
+// This is essentially a stub like class since Vue requires this but no extra methods outside VNNode is necessary
+export interface VNElement extends VNNode {}
