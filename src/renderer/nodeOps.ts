@@ -2,16 +2,17 @@ import { VNNode, VNElement, Text, View, Image, TextArea, Button } from '../compo
 
 export const nodeOps = {
     insert: (child: VNNode, parent: VNNode, anchor?: VNNode) => {
-        //console.log("Inserting Element");
-        parent.appendChild(child);
+        console.log("Inserting Element");
+        parent.appendChild(child, anchor);
     },
 
     remove: (child: VNNode) => {
-        //console.log("Removing Element");
+        console.log("Removing Element");
+        child.remove();
     },
 
     createElement: (tag: string, isSVG?: boolean): VNElement => {
-        //console.log("Creating Element: " + tag);
+        console.log("Creating Element: " + tag);
         switch (tag) {
             case "p": {
                 return new Text();
@@ -66,39 +67,41 @@ export const nodeOps = {
     },
 
     createText: (text: string): any => {
-        //console.log("Creating Text Element");
+        console.log("Creating Text Element");
     },
 
-    createComment: (text: string): any => {
-        //console.log("Creating Comment");
+    createComment: (text: string): VNElement => {
+        console.log("Creating Comment");
+        return new View();
     },
 
     setText: (node: VNNode, text: string) => {
-        //console.log("Setting Text");
+        console.log("Setting Text");
         node.setText(text);
     },
 
     setElementText: (el: VNElement, text: string) => {
-        //console.log("Setting Element Text");
+        console.log("Setting Element Text");
         el.setText(text);
     },
 
     parentNode: (node: VNNode): VNNode | null => {
-        //console.log("Get Parent Node");
-        return null;
+        console.log("Get Parent Node");
+        return node.parent;
     },
     
     nextSibling: (node: VNNode): VNNode | null => {
-        //console.log("Get Next Sibling");
-        return null;
+        console.log("Get Next Sibling");
+        return node.nextSibling;
     },
 
     querySelector: (select: string): VNElement | null => {
-        //console.log("Query Selector");
+        console.log("Query Selector");
         return null;
     },
 
     setScopeId(el: VNElement, id: string) {
-        //console.log("Set Scope ID");
+        console.log("Set Scope ID");
+        el.setScopeId(id);
     }
 }

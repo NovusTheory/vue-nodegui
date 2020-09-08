@@ -5,6 +5,10 @@ export abstract class VNNode {
      * Returns the native QWidget for this object.
      */
     abstract nativeWidget: QWidget;
+    public parent: VNNode | null = null;
+    public previousSibling: VNNode | null = null;
+    public nextSibling: VNNode | null = null;
+    public children: VNNode[] = [];
 
     private stringifyStyle(styleObj: Object): string {
         const styleString = (
@@ -85,7 +89,21 @@ export abstract class VNNode {
      * Throws an exception if this node doesn't support children.
      * @param node The node to append.
      */
-    appendChild(node: VNNode): void {
+    appendChild(node: VNNode, anchor?: VNNode): void {
+        node.parent = this;
+
+        if (anchor) {
+            let index = this.children.indexOf(anchor)
+            this.children = this.children.splice(index, 0, node);
+        } else {
+            this.children.push(node);
+        }
+
+        let length = this.children.length
+        if (length - 2 >= 0) {
+            this.children[length - 2].nextSibling = node;
+        }
+
         if (this.nativeWidget instanceof QMainWindow) {
             (this.nativeWidget as QMainWindow).setCentralWidget(node.nativeWidget);
             return;
@@ -95,5 +113,49 @@ export abstract class VNNode {
         }
 
         throw new Error("Method not supported");
+    }
+
+    /**
+     * Removes a child node from this node.
+     * Throws an exception if this node doesn't support children.
+     * @param node The node to remove.
+     */
+    removeChild(node: VNNode): void {
+        node.parent = this;
+        let index = this.children.indexOf(node);
+        if (index == this.children.length - 1) {
+            this.children[index - 1].nextSibling = null;
+        } else if (index < this.children.length - 1 && index > 0) {
+            this.children[index - 1].nextSibling = this.children[index + 1]
+        }
+
+        this.children.splice(index, 1);
+
+        if (this.nativeWidget instanceof QMainWindow) {
+            (this.nativeWidget as QMainWindow).takeCentralWidget();
+            return;
+        } else if (this.nativeWidget instanceof QWidget) {
+            this.nativeWidget.layout?.removeWidget(node.nativeWidget);
+            return;
+        }
+
+        throw new Error("Method not supported");
+    }
+
+    /**
+     * Removes the node
+     */
+    remove(): void {
+        if (this.parent) {
+            this.parent.removeChild(this)
+        }
+    }
+
+    /**
+     * Sets the scope id of the node
+     * @param id The scope id
+     */
+    setScopeId(id: string): void {
+        this.nativeWidget.setProperty(id, '');
     }
 }

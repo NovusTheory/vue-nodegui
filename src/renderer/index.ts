@@ -5,6 +5,13 @@ import { VNNode, VNElement } from '../components';
 import { Window } from '../components/Window';
 import * as runtimeCore from '@vue/runtime-core';
 
+declare module '@vue/reactivity' {
+    export interface RefUnwrapBailTypes {
+      // Note: if updating this, also update `types/refBail.d.ts`.
+      runtimeDOMBailTypes: VNNode | Window
+    }
+  }
+
 const renderer = createRenderer<VNNode, VNElement>(Object.assign({ patchProp }, nodeOps));
 
 export const render = ((...args) => {
@@ -22,16 +29,3 @@ export const createApp = ((...args) => {
 
     return app;
 }) as CreateAppFunction<VNElement>
-
-/*export const render = baseRender as RootRenderFunction<VNElement>;
-
-export const createApp: CreateAppFunction<VNElement> = (...args) => {
-    const app = baseCreateApp(...args);
-
-    const mount = app.mount;
-    app.mount = (rootContainer: Window): any => {
-        return mount(rootContainer);
-    }
-
-    return app
-}*/

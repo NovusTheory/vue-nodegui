@@ -27,10 +27,6 @@ export class Window extends VNNode {
 
         this.nativeWidget.show();
     }
-
-    appendChild(node: VNNode): void {
-        this.nativeWidget.setCentralWidget(node.nativeWidget);
-    }
 }
 
 export class WindowSettings {

@@ -14,7 +14,7 @@ export const patchProp: RendererOptions<VNNode, VNElement>['patchProp'] = (
     unmountChildren
 ) => {
     // Handle property patching such as class, style, etc
-    //console.log("Patch Prop: " + key);
+    console.log("Patch Prop: " + key);
 
     // Vue does this when checking for event patches
     if (key[0] === "o" && key[1] === "n") {
