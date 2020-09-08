@@ -72,6 +72,7 @@ export const nodeOps = {
 
     createComment: (text: string): VNElement => {
         console.log("Creating Comment");
+        // This is temporary until a comment class is created
         return new View();
     },
 
