@@ -57,25 +57,25 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
   integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
 
-"@vue/reactivity@3.0.0-rc.10":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.0.0-rc.10.tgz#34d5f51bcc5a7c36e27d7a9c1bd7a3d25ffa7c56"
-  integrity sha512-mkUZfOJlbqGZx2cARmhCs5r2+xLJPL7VFNagmlA3Fd66ZXBc3ZvTQdYsY4VUbYJFe5ByIzqu9TZiAkzXY+JVaA==
+"@vue/reactivity@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.0.tgz#564afd476d54d1324f4751b2dff4c873215d68eb"
+  integrity sha512-BVDOtWO2qq3xEaMbpg88wIbP38EdZqllmeKzdcQTfi0zoZVnopvylv7n2AZhh75dKN+WUyqdzKYBotGhw4Uikw==
   dependencies:
-    "@vue/shared" "3.0.0-rc.10"
+    "@vue/shared" "3.1.0"
 
 "@vue/runtime-core@^3.0.0-rc.10":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.0.0-rc.10.tgz#9055aef5113cbc328aaec29760c2151e0ed3cf40"
-  integrity sha512-VK/kq4gDDoqZ45CVwdbLLpikXLYLCt6YLhdgXX3fhf20gvPqrbEZv1ZNLruNnhhTpf9cLyU4tZ18DHeaUYPziw==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.1.0.tgz#d4ed65ccf3611b51545c90ea34773d7c5fbca9e8"
+  integrity sha512-7+FYd40dhslvdUGI5TQZwbMfNct7/SJfdV1bZgAaw/XB7ffLlDfDdF7vealbDJQCJwNRpBWYtf9Sa8Jq/K/HZQ==
   dependencies:
-    "@vue/reactivity" "3.0.0-rc.10"
-    "@vue/shared" "3.0.0-rc.10"
+    "@vue/reactivity" "3.1.0"
+    "@vue/shared" "3.1.0"
 
-"@vue/shared@3.0.0-rc.10":
-  version "3.0.0-rc.10"
-  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.0-rc.10.tgz#e7ab62abcabbfc738545902b96a3aa78f59f3286"
-  integrity sha512-fI6gVhhgb3cAmEkY4oeVVA2hWZ2xvkgogHdBI5PL7gSvZnOB6XZ2eQGsYjC4W+7BegvEkoMBuZsFXVa4ZQ07XQ==
+"@vue/shared@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.0.tgz#5984883d31f0d8a4ee7db8e206ab804e603933a6"
+  integrity sha512-ThLOuFq7ZicNV1Cmlhij0m/S7oyboO5laE727s+kP5oVTpO7awjHhDe5T0hLyd6euosdBKcoBbfd8JkIhcB4dw==
 
 ajv@^6.12.3:
   version "6.12.3"
